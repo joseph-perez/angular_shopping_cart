@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="shoppingCart">
+	<head>
+		<title>Angular Shopping Cart</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+		<script type="text/javascript" src="shopping_cart.js"></script>
+	</head>
+	<body ng-controller="shoppingCartController">
+		<h1>Shopping Cart</h1>
+		<div ng-repeat="item in items">
+			<span>{{item.title}}</span>
+			<input ng-model="item.quanity" >
+			<span>{{item.price | currency}}</span>
+			<span>{{item.price * item.quanity | currency}}</span>
+			<button ng-click="remove(index)">Remove</button>
+		</div>
+	</body>
+</html>
